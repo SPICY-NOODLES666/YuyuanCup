@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"yuyuanbei_blueteeth\startup_stm32f103xb.o"
+"yuyuanbei_blueteeth\main.o"
+"yuyuanbei_blueteeth\stm32f1xx_it.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_msp.o"
+"yuyuanbei_blueteeth\blueteeth.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_gpio_ex.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_tim.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_tim_ex.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_uart.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_rcc.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_rcc_ex.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_gpio.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_dma.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_cortex.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_pwr.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_flash.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_flash_ex.o"
+"yuyuanbei_blueteeth\stm32f1xx_hal_exti.o"
+"yuyuanbei_blueteeth\system_stm32f1xx.o"
+--strict --scatter "YuyuanBei_Blueteeth\YuyuanBei_Blueteeth.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "YuyuanBei_Blueteeth.map" -o YuyuanBei_Blueteeth\YuyuanBei_Blueteeth.axf
