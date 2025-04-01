@@ -8,13 +8,13 @@
 // AT命令字符串定义区域
 char Chead[] = "AT+";
 char role[] = "AT+ROLE=";
-char Cconnect[] = "CONN";
+char Cconnect[] = "BIND";
 char Csend[] = "SEND";
 char sendav[] = "AT+SENDEN=1\\r\\n";
 char senddv[] = "AT+SENDEN=0\\r\\n";
 char Cset[] = "=";
 char C[200];
-char *Clist[3] = {Cconnect, Csend};
+char *Clist[2] = {Cconnect, Csend};
 
 UART_HandleTypeDef *huart = NULL;
 char *receivedData = NULL;
@@ -22,12 +22,12 @@ char *receivedData = NULL;
 // 作用：设置蓝牙连接的USART串口，定义蓝牙主机从机
 // 输入：USART串口结构体，char型变量："1":主机;"0":从机
 // 输出：无
-void BL_set(UART_HandleTypeDef *usart, char Flag)
+void BL_set(USART_TypeDef *usart, char Flag)
 {
     memset(C, 0, strlen(C));
     strcat(C, role);
     strcat(C, Flag);
-    huart = usart;
+    MX_USART1_UART_Init(usart);
     HAL_UART_Transmit(huart, sendav, sizeof(sendav) - 1, 1000);
     HAL_UART_Transmit(huart, C, sizeof(C) - 1, 1000);
     HAL_UART_Transmit(huart, senddv, sizeof(senddv) - 1, 1000);
@@ -45,6 +45,25 @@ void BL_command(int flag, char *data)
     strcat(C, data);
     Command(flag);
     return;
+}
+
+// 作用：定义蓝牙连接的usart接口与波特率
+// 输入：USART_TypeDef结构体
+// 输出：无
+static void MX_USART1_UART_Init(USART_TypeDef *usart)
+{
+    huart->Instance = usart;
+    huart->Init.BaudRate = 9600;
+    huart->Init.WordLength = UART_WORDLENGTH_8B;
+    huart->Init.StopBits = UART_STOPBITS_1;
+    huart->Init.Parity = UART_PARITY_NONE;
+    huart->Init.Mode = UART_MODE_TX_RX;
+    huart->Init.HwFlowCtl = UART_HWCONTROL_NONE;
+    huart->Init.OverSampling = UART_OVERSAMPLING_16;
+    if (HAL_UART_Init(huart) != HAL_OK)
+    {
+        Error_Handler();
+    }
 }
 
 // 作用：接收数据
