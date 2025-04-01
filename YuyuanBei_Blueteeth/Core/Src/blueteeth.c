@@ -21,17 +21,16 @@ char C[200];
 char *Clist[2] = {Cconnect, Csend};
 
 UART_HandleTypeDef *huart = NULL;
-char *receivedData = NULL;
 
 // 作用：设置蓝牙连接的USART串口，定义蓝牙主机从机
 // 输入：USART串口结构体，char型变量："1":主机;"0":从机
 // 输出：无
-void BL_set(USART_TypeDef *usart, char Flag)
+void BL_set(UART_HandleTypeDef *usart, char Flag)
 {
     memset(C, 0, strlen(C));
     strcat(C, role);
     strcat(C, &Flag);
-    MX_USART1_UART_Init(usart);
+    huart = usart;
     // HAL_UART_Transmit(huart, sendav, sizeof(sendav) - 1, 1000);
     HAL_UART_Transmit(huart, (uint8_t *)C, sizeof(C) - 1, 1000);
     // HAL_UART_Transmit(huart, senddv, sizeof(senddv) - 1, 1000);
@@ -51,65 +50,32 @@ void BL_command(int flag, char *data)
     return;
 }
 
-// 作用：定义蓝牙连接的usart接口与波特率
-// 输入：USART_TypeDef结构体
-// 输出：无
-// void MX_USART1_UART_Init(USART_TypeDef *usart)
-// {
-//     huart->Instance = usart;
-//     huart->Init.BaudRate = 9600;
-//     huart->Init.WordLength = UART_WORDLENGTH_8B;
-//     huart->Init.StopBits = UART_STOPBITS_1;
-//     huart->Init.Parity = UART_PARITY_NONE;
-//     huart->Init.Mode = UART_MODE_TX_RX;
-//     huart->Init.HwFlowCtl = UART_HWCONTROL_NONE;
-//     huart->Init.OverSampling = UART_OVERSAMPLING_16;
-//     if (HAL_UART_Init(huart) != HAL_OK)
-//     {
-//         Error_Handler();
-//     }
-// }
-
 // 作用：接收数据
 // 输入：无
 // 输出：获得的字符串
-// void BL_IRQHandler(void)
-// {
-//     if (USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
-//     {
-//         USART_SendData(USART1, USART_ReceiveData(USART1)); // 发送数据，发送串口1接收的数据
-
-//         // 清除中断事件
-//         USART_ClearITPendingBit(USART1, USART_IT_RXNE);
-
-//         // 如果==0，就一直在这循环等待，直到等于1才跳出循环，这个标志位是1的时候，代表发送完成了
-//         // while ( USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);//USART_FLAG_TC标志位 运行不稳定
-//         while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET)
-//             ;
-//     }
-// }
-// char *BL_Receive()
-// {
-//     memset(receivedData, 0, BUFFER_SIZE);
-//     uint8_t ch;
-//     if (HAL_UART_GET_FLAG(huart, UART_FLAG_RXNE) != RESET)
-//     {
-//         ch = (uint8_t)(huart->Instance->DR); // 读取数据寄存器
-//         static uint8_t index = 0;
-//         if (ch != '\n' && index < BUFFER_SIZE - 1)
-//         {                               // 如果不是换行且缓冲区未满
-//             receivedData[index++] = ch; // 存储接收到的字符
-//         }
-//         else
-//         {
-//             receivedData[index] = '\0'; // 在字符串末尾添加结束符
-//             index = 0;                  // 重置索引
-//             // 这里可以添加代码处理接收到的字符串，例如返回给上位机
-//             HAL_UART_Transmit(huart, (uint8_t *)receivedData, strlen(receivedData), 1000);
-//         }
-//     }
-//     return receivedData;
-// }
+void BL_Receive(char *receivedData)
+{
+    memset(receivedData, 0, BUFFER_SIZE);
+    uint8_t ch;
+    ch = (uint8_t)(huart->Instance->DR); // 读取数据寄存器
+    static uint8_t index = 0;
+    for (uint8_t i = 0; i < 100; i++)
+    {
+        if (ch != '\0' && index < BUFFER_SIZE - 1)
+        {                               // 如果不是换行且缓冲区未满
+            receivedData[index++] = ch; // 存储接收到的字符
+        }
+        else
+        {
+            receivedData[index] = '\0'; // 在字符串末尾添加结束符
+            index = 0;                  // 重置索引
+            break;
+            // 这里可以添加代码处理接收到的字符串，例如返回给上位机
+            // HAL_UART_Transmit(huart, (uint8_t *)receivedData, strlen(receivedData), 1000);
+        }
+    }
+    return;
+}
 
 // 作用：处理传入的命令
 // 输入：命令类型，*全局变量命令

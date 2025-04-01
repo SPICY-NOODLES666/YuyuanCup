@@ -30,3 +30,4 @@ yuyuanbei_blueteeth\main.o: ../Core/Inc/blueteeth.h
 yuyuanbei_blueteeth\main.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\string.h
 yuyuanbei_blueteeth\main.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\stdbool.h
 yuyuanbei_blueteeth\main.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\stdio.h
+yuyuanbei_blueteeth\main.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\stdlib.h

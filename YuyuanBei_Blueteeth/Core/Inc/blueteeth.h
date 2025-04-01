@@ -7,8 +7,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 
-char *BL_Receive();
-void BL_set(USART_TypeDef *usart, char Flag);
+void BL_Receive(char *receivedData);
+void BL_set(UART_HandleTypeDef *usart, char Flag);
 void BL_command(int flag, char *data);
 void Command(int flag);
 void Connect();

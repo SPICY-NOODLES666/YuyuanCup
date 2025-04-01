@@ -1,6 +1,6 @@
 Dependencies for Project 'YuyuanBei_Blueteeth', Target 'YuyuanBei_Blueteeth': (DO NOT MODIFY !)
 F (startup_stm32f103xb.s)(0x67EA935D)(--cpu Cortex-M3 -g --apcs=interwork -I d:\AAwty\YuyuanBei\YuyuanCup_Git\YuyuanBei_Blueteeth\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1--pd "__UVISION_VERSION SETA 514" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o yuyuanbei_blueteeth\startup_stm32f103xb.o --depend yuyuanbei_blueteeth\startup_stm32f103xb.d)
-F (../Core/Src/main.c)(0x67EB961E)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src -I..\Core\Inc-I d:\AAwty\YuyuanBei\YuyuanCup_Git\YuyuanBei_Blueteeth\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o yuyuanbei_blueteeth\main.o --omf_browse yuyuanbei_blueteeth\main.crf --depend yuyuanbei_blueteeth\main.d)
+F (../Core/Src/main.c)(0x67EBD79B)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src -I..\Core\Inc-I d:\AAwty\YuyuanBei\YuyuanCup_Git\YuyuanBei_Blueteeth\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o yuyuanbei_blueteeth\main.o --omf_browse yuyuanbei_blueteeth\main.crf --depend yuyuanbei_blueteeth\main.d)
 I (../Core/Inc/main.h)(0x67EA935C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6701F056)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x67EA935C)
@@ -27,10 +27,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6701F056)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6701F056)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6701F056)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6701F056)
-I (../Core/Inc/blueteeth.h)(0x67EB9BA2)
+I (../Core/Inc/blueteeth.h)(0x67EBD7FC)
 I (D:\Keil_v5\ARM\ARMCCA\include\string.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARMCCA\include\stdbool.h)(0x5E8E3CC2)
 I (D:\Keil_v5\ARM\ARMCCA\include\stdio.h)(0x5E8E3CC2)
+I (D:\Keil_v5\ARM\ARMCCA\include\stdlib.h)(0x5E8E3CC2)
 F (../Core/Src/stm32f1xx_it.c)(0x67EA935B)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src -I..\Core\Inc-I d:\AAwty\YuyuanBei\YuyuanCup_Git\YuyuanBei_Blueteeth\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o yuyuanbei_blueteeth\stm32f1xx_it.o --omf_browse yuyuanbei_blueteeth\stm32f1xx_it.crf --depend yuyuanbei_blueteeth\stm32f1xx_it.d)
 I (../Core/Inc/main.h)(0x67EA935C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6701F056)
@@ -86,8 +87,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6701F056)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6701F056)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6701F056)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6701F056)
-F (..\Core\Src\blueteeth.c)(0x67EB9B9E)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src -I..\Core\Inc-I d:\AAwty\YuyuanBei\YuyuanCup_Git\YuyuanBei_Blueteeth\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o yuyuanbei_blueteeth\blueteeth.o --omf_browse yuyuanbei_blueteeth\blueteeth.crf --depend yuyuanbei_blueteeth\blueteeth.d)
-I (..\Core\Src\..\Inc\blueteeth.h)(0x67EB9BA2)
+F (..\Core\Src\blueteeth.c)(0x67EBD712)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I..\Core\Src -I..\Core\Inc-I d:\AAwty\YuyuanBei\YuyuanCup_Git\YuyuanBei_Blueteeth\MDK-ARM\RTE-I D:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.1-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o yuyuanbei_blueteeth\blueteeth.o --omf_browse yuyuanbei_blueteeth\blueteeth.crf --depend yuyuanbei_blueteeth\blueteeth.d)
+I (..\Core\Src\..\Inc\blueteeth.h)(0x67EBD7FC)
 I (..\Core\Src\..\Inc\main.h)(0x67EA935C)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6701F056)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x67EA935C)
