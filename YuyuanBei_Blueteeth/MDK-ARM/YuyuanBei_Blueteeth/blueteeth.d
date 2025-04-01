@@ -1,6 +1,6 @@
 yuyuanbei_blueteeth\blueteeth.o: ..\Core\Src\blueteeth.c
 yuyuanbei_blueteeth\blueteeth.o: ..\Core\Src\..\Inc\blueteeth.h
-yuyuanbei_blueteeth\blueteeth.o: ../Core/Inc/main.h
+yuyuanbei_blueteeth\blueteeth.o: ..\Core\Src\..\Inc\main.h
 yuyuanbei_blueteeth\blueteeth.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 yuyuanbei_blueteeth\blueteeth.o: ../Core/Inc/stm32f1xx_hal_conf.h
 yuyuanbei_blueteeth\blueteeth.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -27,3 +27,6 @@ yuyuanbei_blueteeth\blueteeth.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_h
 yuyuanbei_blueteeth\blueteeth.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 yuyuanbei_blueteeth\blueteeth.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 yuyuanbei_blueteeth\blueteeth.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+yuyuanbei_blueteeth\blueteeth.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\string.h
+yuyuanbei_blueteeth\blueteeth.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\stdbool.h
+yuyuanbei_blueteeth\blueteeth.o: D:\Keil_v5\ARM\ARMCCA\Bin\..\include\stdio.h

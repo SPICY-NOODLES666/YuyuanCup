@@ -1,0 +1,23 @@
+Build target 'YuyuanBei_Blueteeth'
+compiling main.c...
+../Core/Inc/blueteeth.h(10): warning:  #1295-D: Deprecated declaration BL_Receive - give arg types
+  char *BL_Receive();
+../Core/Inc/blueteeth.h(14): warning:  #1295-D: Deprecated declaration Connect - give arg types
+  void Connect();
+../Core/Inc/blueteeth.h(15): warning:  #1295-D: Deprecated declaration Sendmessage - give arg types
+  void Sendmessage();
+../Core/Src/main.c: 3 warnings, 0 errors
+compiling blueteeth.c...
+..\Core\Src\..\Inc\blueteeth.h(10): warning:  #1295-D: Deprecated declaration BL_Receive - give arg types
+  char *BL_Receive();
+..\Core\Src\..\Inc\blueteeth.h(14): warning:  #1295-D: Deprecated declaration Connect - give arg types
+  void Connect();
+..\Core\Src\..\Inc\blueteeth.h(15): warning:  #1295-D: Deprecated declaration Sendmessage - give arg types
+  void Sendmessage();
+..\Core\Src\blueteeth.c(132): warning:  #1-D: last line of file ends without a newline
+  }
+..\Core\Src\blueteeth.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=3136 RO-data=312 RW-data=56 ZI-data=1632  
+FromELF: creating hex file...
+"YuyuanBei_Blueteeth\YuyuanBei_Blueteeth.axf" - 0 Error(s), 7 Warning(s).
